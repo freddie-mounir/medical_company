@@ -1,5 +1,4 @@
 body {
-	padding: 2rem;
 	font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
 }
 
@@ -25,4 +24,56 @@ p {
 
 .card p:last-child {
 	margin-bottom: 0;
+}
+
+
+
+/* Dropdown menu */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Hero section */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Product cards */
+.product-card {
+    min-height: 300px;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: visible;
+}
+
+.product-card::before {
+    content: none; /* Remove static border */
+}
+
+.border-line {
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: #1e40af;
+    opacity: 0;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(30, 64, 175, 0.7);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Partner logos */
+.partner-logo {
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }

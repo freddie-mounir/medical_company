@@ -6,31 +6,9 @@
     <title>Gulfmed Egypt - A Mission to Cure</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-        .hero-section {
-            background: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        .product-card {
-            min-height: 300px;
-        }
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .partner-logo {
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0%);
-            transform: scale(1.1);
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="font-sans">
     <!-- Top Bar -->
@@ -139,9 +117,9 @@
 
     <!-- Contact Info -->
     <div class="text-white bg-white py-8 -mt-16 relative z-10">
-        <div class="container mx-auto px-4 bg-blue-900 rounded-lg shadow-lg py-6">
+        <div class="container mx-auto px-4 bg-blue-900 rounded-lg shadow-lg py-6 top-0">
             <div class="flex flex-col md:flex-row justify-between items-center py-6 px-6">
-                <div class="mb-4 md:mb-0">
+                <div class="mb-4 md:mb-0>
                     <h2 class="text-2xl font-bold mb-2">Welcome to Gulfmed Egypt</h2>
                     <p class="text-blue-200">A Mission to Cure</p>
                 </div>
@@ -164,9 +142,9 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <!-- Product Card 1 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 h-full flex flex-col">
-                    <div class="bg-blue-100 p-6 text-center flex-grow">
-                        <i class="fas fa-stomach text-5xl text-blue-900 mb-4"></i>
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
+                        <i class="fas fa-pills text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">GIT</h3>
                         <p class="text-gray-600 mb-4">Gastrointestinal solutions for better digestive health</p>
                         <a href="#" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
@@ -174,8 +152,8 @@
                 </div>
                 
                 <!-- Product Card 2 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
                         <i class="fas fa-procedures text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">General Surgery</h3>
                         <p class="text-gray-600 mb-4">Comprehensive surgical products and solutions</p>
@@ -184,8 +162,8 @@
                 </div>
                 
                 <!-- Product Card 3 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
                         <i class="fas fa-x-ray text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">Interventional Radiology & Diagnostic Oncology</h3>
                         <p class="text-gray-600 mb-4">Advanced imaging and diagnostic solutions</p>
@@ -194,8 +172,8 @@
                 </div>
                 
                 <!-- Product Card 4 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
                         <i class="fas fa-vial text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">IVD</h3>
                         <p class="text-gray-600 mb-4">In vitro diagnostic products for accurate testing</p>
@@ -204,8 +182,8 @@
                 </div>
                 
                 <!-- Product Card 5 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
                         <i class="fas fa-heartbeat text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">Cardiology</h3>
                         <p class="text-gray-600 mb-4">Cardiovascular health products and solutions</p>
@@ -214,9 +192,9 @@
                 </div>
                 
                 <!-- Product Card 6 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
-                        <i class="fas fa-vein text-5xl text-blue-900 mb-4"></i>
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
+                        <i class="fas fa-heart text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">Peripheral Vascular</h3>
                         <p class="text-gray-600 mb-4">Vascular health products and treatments</p>
                         <a href="#" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
@@ -224,9 +202,9 @@
                 </div>
                 
                 <!-- Product Card 7 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
-                        <i class="fas fa-bladder text-5xl text-blue-900 mb-4"></i>
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
+                        <i class="fas fa-user-md text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">Urology</h3>
                         <p class="text-gray-600 mb-4">Urological health products and solutions</p>
                         <a href="#" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
@@ -234,8 +212,8 @@
                 </div>
                 
                 <!-- Product Card 8 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
-                    <div class="bg-blue-100 p-6 text-center">
+                <div class="product-card bg-blue-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6 text-center">
                         <i class="fas fa-pills text-5xl text-blue-900 mb-4"></i>
                         <h3 class="text-xl font-bold text-blue-900 mb-2">Pharma</h3>
                         <p class="text-gray-600 mb-4">Pharmaceutical products and medications</p>
@@ -478,7 +456,7 @@
             <div class="border-t border-gray-800 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="mb-4 md:mb-0 text-gray-400 text-sm">
-                        Copyright © 2024 Gulfmed is Proudly Powered by <a href="http://www.medicaspace.com/" class="text-blue-400 hover:underline">Medicaspace</a>
+                        Copyright © 2024 Gulfmed is Proudly Powered by <a href="https://gocloudeg.com/" class="text-blue-400 hover:underline">GoCloud</a>
                     </div>
                     <div class="flex space-x-4 text-sm">
                         <a href="#" class="text-gray-400 hover:text-white transition">Privacy policy</a>
@@ -491,61 +469,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-900 text-white w-12 h-12 rounded-full shadow-lg hidden">
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-900 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center">
         <i class="fas fa-arrow-up"></i>
     </button>
-
-    <script>
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            document.getElementById('menu-toggle').addEventListener('click', function() {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
-            });
-
-            // Mobile products menu toggle
-            document.getElementById('products-toggle').addEventListener('click', function() {
-                document.getElementById('products-menu').classList.toggle('hidden');
-            });
-
-            // Back to top button
-            var backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > 300) {
-                        backToTopButton.style.display = 'flex';
-                        backToTopButton.style.opacity = '1';
-                    } else {
-                        backToTopButton.style.display = 'none';
-                        backToTopButton.style.opacity = '0';
-                    }
-                });
-
-                backToTopButton.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Drfreddie/gulfmed" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
