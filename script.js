@@ -47,6 +47,81 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Mouse Follower using GSAP QuickSetter for better performance
+    const mouseFollower = document.getElementById('mouse-follower');
+    
+    // Only initialize if the element exists
+    if (mouseFollower && typeof gsap !== 'undefined') {
+        // Hide the follower by default
+        gsap.set(mouseFollower, { 
+            x: -100, 
+            y: -100,
+            opacity: 0
+        });
+        
+        // Create QuickSetter for optimal performance
+        const setMouseFollower = gsap.quickSetter(mouseFollower, 'x,y', 'px');
+        
+        // Variables to store mouse coordinates
+        let mouseX = -100;
+        let mouseY = -100;
+        let followerX = -100;
+        let followerY = -100;
+        
+        // Follow speed (0 = no follow, 1 = instant follow)
+        const followSpeed = 0.12;
+        
+        // Track mouse movement
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Show follower when mouse moves
+            if (parseFloat(mouseFollower.style.opacity) < 1) {
+                gsap.to(mouseFollower, {
+                    opacity: 1,
+                    duration: 0.3,
+                    overwrite: true
+                });
+            }
+        });
+        
+        // Animation loop with QuickSetter
+        function animateFollower() {
+            // Calculate the distance between mouse and follower
+            const dx = mouseX - followerX;
+            const dy = mouseY - followerY;
+            
+            // Move follower towards mouse position with easing
+            followerX += dx * followSpeed;
+            followerY += dy * followSpeed;
+            
+            // Use QuickSetter for high-performance updates
+            setMouseFollower(followerX, followerY);
+            
+            requestAnimationFrame(animateFollower);
+        }
+        
+        // Start animation loop
+        animateFollower();
+        
+        // Hide follower when mouse leaves window
+        document.addEventListener('mouseleave', () => {
+            gsap.to(mouseFollower, {
+                opacity: 0,
+                duration: 0.3
+            });
+        });
+        
+        // Show follower when mouse enters window
+        document.addEventListener('mouseenter', () => {
+            gsap.to(mouseFollower, {
+                opacity: 1,
+                duration: 0.3
+            });
+        });
+    }
 });
 
 // Create animated border for product cards using GSAP
@@ -134,3 +209,38 @@ cards.forEach(card => {
         tl.play();
     });
 });
+// Create a small blue circle cursor follower
+const cursor = document.createElement('div');
+cursor.style.cssText = `
+    width: 20px;
+    height: 20px;
+    background: #3b82f6;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+`;
+document.body.appendChild(cursor);
+
+// Track mouse position and update circle position
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 5 + 'px';
+    cursor.style.top = e.clientY - 5 + 'px';
+    
+    if (parseFloat(cursor.style.opacity) === 0) {
+        cursor.style.opacity = '1';
+    }
+});
+
+// Hide cursor when mouse leaves window
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+});
+
+// Show cursor when mouse enters window
+document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+});
+
