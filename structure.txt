@@ -1,0 +1,6 @@
+gulfmed/
+├── index.html
+├── style.css
+├── script.js
+└── .vscode/
+    └── settings.json
