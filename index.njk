@@ -292,6 +292,44 @@ title: Gulfmed Egypt - Scalable Place for Medical Needs
     </div>
 </section>
 
+<!-- Blog Posts Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Latest News & Updates</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {%- for post in collections.all -%}
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                {% if post.data.image %}
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">
+                        <a href="{{ post.url }}" class="hover:text-blue-700 transition">{{ post.data.title }}</a>
+                    </h3>
+                    {% if post.data.description %}
+                    <p class="text-gray-600 mb-4">{{ post.data.description }}</p>
+                    {% endif %}
+                    <a href="{{ post.url }}" class="text-blue-700 hover:text-blue-900 font-medium inline-flex items-center">
+                        Read More
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </article>
+            {%- endfor -%}
+        </div>
+
+        {% if collections.posts.length > 3 %}
+        <div class="text-center mt-8">
+            <a href="/blog" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition duration-300">
+                View All Posts
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
 <!-- Partners Section -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">

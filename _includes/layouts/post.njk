@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+
+
+<article class="post">
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    {% if author %}
+      <div class="post-author">
+        <h3>About the Author</h3>
+        <p>{{ author.name }}</p>
+        {% if author.bio %}
+          <p>{{ author.bio }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <nav class="post-navigation">
+      {% if previousPost %}
+        <a href="{{ previousPost.url }}" class="prev-post">← {{ previousPost.title }}</a>
+      {% endif %}
+      {% if nextPost %}
+        <a href="{{ nextPost.url }}" class="next-post">{{ nextPost.title }} →</a>
+      {% endif %}
+    </nav>
+  </footer>
+</article>
